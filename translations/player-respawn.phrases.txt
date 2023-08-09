@@ -1,0 +1,18 @@
+"Phrases"
+{
+    "Cannot respawn spectator"
+    {
+        "en"    "You cannot respawn a spectator"
+    }
+
+    "Cannot respawn player without class"
+    {
+        "en"    "You cannot respawn a player who has not chosen a class"
+    }
+
+    "Player respawned"
+    {
+        "#format"   "{1:N}"
+        "en"    "Player {1} respawned"
+    }
+}
