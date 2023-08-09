@@ -9,4 +9,10 @@
     {
         "en"    "You cannot respawn a player who has not chosen a class"
     }
+
+    "Player respawned"
+    {
+        "#format"   "{1:N}"
+        "en"    "Player {1} respawned"
+    }
 }
