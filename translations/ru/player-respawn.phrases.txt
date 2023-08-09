@@ -1,0 +1,12 @@
+"Phrases"
+{
+    "Cannot respawn spectator"
+    {
+        "ru"    "Вы не можете возродить наблюдателя"
+    }
+
+    "Cannot respawn player without class"
+    {
+        "ru"    "Вы не можете возродить игрока, который не выбрал класс"
+    }
+}
