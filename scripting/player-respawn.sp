@@ -24,4 +24,8 @@ public void OnPluginStart() {
     SdkHook_Create();
     LoadTranslations("common.phrases");
     LoadTranslations("player-respawn.phrases");
+
+    if (LibraryExists("multi-target-filters")) {
+        LoadTranslations("multi-target-filters.phrases");
+    }
 }
