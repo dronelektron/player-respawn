@@ -1,22 +1,17 @@
-void UseCase_Respawn(int client, int target) {
-    if (GetClientTeam(target) < TEAM_ALLIES) {
-        Message_CannotRespawnSpectator(client);
+bool UseCase_Respawn(int client, int target) {
+    bool noTeam = GetClientTeam(target) < TEAM_ALLIES;
+    bool noClass = UseCase_GetDesiredPlayerClass(target) == NO_DESIRED_PLAYER_CLASS;
 
-        return;
-    }
-
-    int desiredPlayerClass = UseCase_GetDesiredPlayerClass(target);
-
-    if (desiredPlayerClass == NO_DESIRED_PLAYER_CLASS) {
-        Message_CannotRespawnWithoutClass(client);
-
-        return;
+    if (noTeam || noClass) {
+        return false;
     }
 
     SdkHook_Respawn(target);
     MessageLog_PlayerRespawned(client, target);
+
+    return true;
 }
 
-int UseCase_GetDesiredPlayerClass(int client) {
+static int UseCase_GetDesiredPlayerClass(int client) {
     return GetEntProp(client, Prop_Send, "m_iDesiredPlayerClass");
 }

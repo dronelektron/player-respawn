@@ -13,11 +13,3 @@ void MessageActivity_PlayerRespawned(int client, const char[] targetName, bool i
 void MessageLog_PlayerRespawned(int client, int target) {
     LogMessage("\"%L\" respawned \"%L\"", client, target);
 }
-
-void Message_CannotRespawnSpectator(int client) {
-    ReplyToCommand(client, "%s%t", PREFIX, "Cannot respawn spectator");
-}
-
-void Message_CannotRespawnWithoutClass(int client) {
-    ReplyToCommand(client, "%s%t", PREFIX, "Cannot respawn player without class");
-}
