@@ -1,6 +1,7 @@
 #include <sourcemod>
 #include <sdktools>
 
+#include "pr/console-command"
 #include "pr/message"
 #include "pr/sdk-hook"
 #include "pr/use-case"

@@ -4,3 +4,4 @@
 #define _pr_message_included
 
 #define PREFIX "[Player respawn] "
+#define PLAYER_RESPAWNED "Player respawned"

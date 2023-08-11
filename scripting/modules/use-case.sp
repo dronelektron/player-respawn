@@ -14,7 +14,7 @@ void UseCase_Respawn(int client, int target) {
     }
 
     SdkHook_Respawn(target);
-    Message_PlayerRespawned(client, target);
+    MessageLog_PlayerRespawned(client, target);
 }
 
 int UseCase_GetDesiredPlayerClass(int client) {
