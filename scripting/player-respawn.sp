@@ -15,7 +15,7 @@ public Plugin myinfo = {
     name = "Player respawn",
     author = "Dron-elektron",
     description = "Allows you to respawn the player",
-    version = "1.0.0",
+    version = "1.1.0",
     url = "https://github.com/dronelektron/player-respawn"
 };
 
@@ -24,4 +24,8 @@ public void OnPluginStart() {
     SdkHook_Create();
     LoadTranslations("common.phrases");
     LoadTranslations("player-respawn.phrases");
+
+    if (LibraryExists("multi-target-filters")) {
+        LoadTranslations("multi-target-filters.phrases");
+    }
 }
