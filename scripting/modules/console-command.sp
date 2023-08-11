@@ -27,13 +27,17 @@ public Action Command_Respawn(int client, int args) {
         return Plugin_Handled;
     }
 
+    bool respawned = false;
+
     for (int i = 0; i < playersAmount; i++) {
         int target = targets[i];
 
-        UseCase_Respawn(client, target);
+        respawned |= UseCase_Respawn(client, target);
     }
 
-    MessageActivity_PlayerRespawned(client, targetName, isMultilingual);
+    if (respawned) {
+        MessageActivity_PlayerRespawned(client, targetName, isMultilingual);
+    }
 
     return Plugin_Handled;
 }
