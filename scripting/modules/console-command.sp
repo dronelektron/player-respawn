@@ -13,11 +13,27 @@ public Action Command_Respawn(int client, int args) {
 
     GetCmdArg(1, name, sizeof(name));
 
-    int target = FindTarget(client, name);
+    int[] targets = new int[MAXPLAYERS];
+    char targetName[MAX_NAME_LENGTH];
+    bool isMultilingual;
 
-    if (target != CLIENT_NOT_FOUND) {
+    int playersAmount = ProcessTargetString(
+        name, client, targets, MAXPLAYERS, COMMAND_FILTER_NONE, targetName, sizeof(targetName), isMultilingual
+    );
+
+    if (playersAmount <= 0) {
+        ReplyToTargetError(client, playersAmount);
+
+        return Plugin_Handled;
+    }
+
+    for (int i = 0; i < playersAmount; i++) {
+        int target = targets[i];
+
         UseCase_Respawn(client, target);
     }
+
+    MessageActivity_PlayerRespawned(client, targetName, isMultilingual);
 
     return Plugin_Handled;
 }
