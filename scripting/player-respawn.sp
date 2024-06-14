@@ -8,6 +8,7 @@
 
 #include "modules/console-command.sp"
 #include "modules/message.sp"
+#include "modules/native.sp"
 #include "modules/sdk-hook.sp"
 #include "modules/use-case.sp"
 
@@ -18,6 +19,12 @@ public Plugin myinfo = {
     version = "1.1.1",
     url = "https://github.com/dronelektron/player-respawn"
 };
+
+public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int errorMax) {
+    Native_Create();
+
+    return APLRes_Success;
+}
 
 public void OnPluginStart() {
     Command_Create();
