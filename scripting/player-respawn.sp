@@ -1,13 +1,14 @@
 #include <sourcemod>
 #include <sdktools>
 
-#include "pr/console-command"
-#include "pr/message"
-#include "pr/sdk-hook"
-#include "pr/use-case"
+#include "player-respawn/console-command"
+#include "player-respawn/message"
+#include "player-respawn/sdk-hook"
+#include "player-respawn/use-case"
 
 #include "modules/console-command.sp"
 #include "modules/message.sp"
+#include "modules/native.sp"
 #include "modules/sdk-hook.sp"
 #include "modules/use-case.sp"
 
@@ -15,9 +16,15 @@ public Plugin myinfo = {
     name = "Player respawn",
     author = "Dron-elektron",
     description = "Allows you to respawn the player",
-    version = "1.1.1",
+    version = "1.2.0",
     url = "https://github.com/dronelektron/player-respawn"
 };
+
+public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int errorMax) {
+    Native_Create();
+
+    return APLRes_Success;
+}
 
 public void OnPluginStart() {
     Command_Create();

@@ -1,7 +1,7 @@
-#if defined _pr_message_included
+#if defined _player_respawn_message_included
  #endinput
 #endif
-#define _pr_message_included
+#define _player_respawn_message_included
 
 #define PREFIX "[Player respawn] "
 #define PLAYER_RESPAWNED "Player respawned"
