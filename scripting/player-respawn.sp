@@ -1,10 +1,10 @@
 #include <sourcemod>
 #include <sdktools>
 
-#include "pr/console-command"
-#include "pr/message"
-#include "pr/sdk-hook"
-#include "pr/use-case"
+#include "player-respawn/console-command"
+#include "player-respawn/message"
+#include "player-respawn/sdk-hook"
+#include "player-respawn/use-case"
 
 #include "modules/console-command.sp"
 #include "modules/message.sp"
