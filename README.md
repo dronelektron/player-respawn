@@ -23,6 +23,8 @@ Allows you to respawn the player
 
 Respawn the `client`
 
+Returns `true` on success and `false` if the player does not have a team or class
+
 ```sourcepawn
-native void RespawnPlayer(int client);
+native bool RespawnPlayer(int client);
 ```
