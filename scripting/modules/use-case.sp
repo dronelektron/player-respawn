@@ -1,5 +1,5 @@
 bool UseCase_Respawn(int client, int target) {
-    if (UseCase_RespawnSilently(target)) {
+    if (UseCase_RespawnSilently(target, FORCE_RESPAWN_YES)) {
         MessageLog_PlayerRespawned(client, target);
 
         return true;
@@ -8,7 +8,7 @@ bool UseCase_Respawn(int client, int target) {
     return false;
 }
 
-bool UseCase_RespawnSilently(int client) {
+bool UseCase_RespawnSilently(int client, bool forceRespawn) {
     bool noTeam = GetClientTeam(client) < TEAM_ALLIES;
     bool noClass = GetDesiredPlayerClass(client) == NO_DESIRED_PLAYER_CLASS;
 
@@ -16,9 +16,13 @@ bool UseCase_RespawnSilently(int client) {
         return false;
     }
 
-    SdkHook_Respawn(client);
+    if (forceRespawn || !IsPlayerAlive(client)) {
+        SdkHook_Respawn(client);
 
-    return true;
+        return true;
+    }
+
+    return false;
 }
 
 static int GetDesiredPlayerClass(int client) {

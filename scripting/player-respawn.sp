@@ -1,6 +1,7 @@
 #include <sourcemod>
 #include <sdktools>
 
+#include "player-respawn/api"
 #include "player-respawn/console-command"
 #include "player-respawn/message"
 #include "player-respawn/sdk-hook"

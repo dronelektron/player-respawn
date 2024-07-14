@@ -3,4 +3,7 @@
 #endif
 #define _player_respawn_api_included
 
-native bool RespawnPlayer(int client);
+#define FORCE_RESPAWN_YES true
+#define FORCE_RESPAWN_NO false
+
+native bool RespawnPlayer(int client, bool forceRespawn = true);

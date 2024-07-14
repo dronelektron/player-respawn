@@ -5,6 +5,7 @@ void Native_Create() {
 
 any Native_RespawnPlayer(Handle plugin, int numParams) {
     int client = GetNativeCell(1);
+    bool forceRespawn = GetNativeCell(2);
 
-    return UseCase_RespawnSilently(client);
+    return UseCase_RespawnSilently(client, forceRespawn);
 }
