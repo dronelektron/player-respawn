@@ -1,6 +1,7 @@
 #include <sourcemod>
 #include <sdktools>
 
+#include "player-respawn/api"
 #include "player-respawn/console-command"
 #include "player-respawn/message"
 #include "player-respawn/sdk-hook"
@@ -16,7 +17,7 @@ public Plugin myinfo = {
     name = "Player respawn",
     author = "Dron-elektron",
     description = "Allows you to respawn the player",
-    version = "2.0.0",
+    version = "2.0.1",
     url = "https://github.com/dronelektron/player-respawn"
 };
 

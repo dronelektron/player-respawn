@@ -21,10 +21,10 @@ Allows you to respawn the player
 
 ### API
 
-Respawn the `client`
+Respawn the `client` in any case (`forceRespawn` is set to `true`), or only the dead one
 
-Returns `true` on success and `false` if the player does not have a team or class
+Returns `true` if the player has been respawned, and `false` otherwise
 
 ```sourcepawn
-native bool RespawnPlayer(int client);
+native bool RespawnPlayer(int client, bool forceRespawn = true);
 ```
