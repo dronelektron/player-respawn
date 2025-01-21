@@ -14,7 +14,7 @@ public Plugin myinfo = {
     name = "Player respawn",
     author = "Dron-elektron",
     description = "Allows you to respawn players",
-    version = "2.0.1",
+    version = "2.1.0",
     url = "https://github.com/dronelektron/player-respawn"
 };
 
