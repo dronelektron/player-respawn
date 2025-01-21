@@ -10,6 +10,7 @@ Allows you to respawn players
 
 * [SourceMod](https://www.sourcemod.net) 1.11 or later
 * [dod-hooks](https://github.com/dronelektron/dod-hooks)
+* [multi-target-filters](https://github.com/dronelektron/multi-target-filters) (Optional)
 
 ### Installation
 
